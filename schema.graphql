@@ -1400,6 +1400,10 @@ enum PaginationDirection {
 
 scalar PhoneNumber
 
+type Placeholder {
+  message: String
+}
+
 enum PledgeOrderByInput {
   amount_ASC
   amount_DESC

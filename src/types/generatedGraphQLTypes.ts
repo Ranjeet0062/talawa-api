@@ -2166,6 +2166,11 @@ export type PaginationDirection =
   | 'BACKWARD'
   | 'FORWARD';
 
+export type Placeholder = {
+  __typename?: 'Placeholder';
+  message?: Maybe<Scalars['String']['output']>;
+};
+
 export type PledgeOrderByInput =
   | 'amount_ASC'
   | 'amount_DESC'
@@ -3575,6 +3580,7 @@ export type ResolversTypes = {
   PageInfo: ResolverTypeWrapper<PageInfo>;
   PaginationDirection: PaginationDirection;
   PhoneNumber: ResolverTypeWrapper<Scalars['PhoneNumber']['output']>;
+  Placeholder: ResolverTypeWrapper<Placeholder>;
   PledgeOrderByInput: PledgeOrderByInput;
   PledgeWhereInput: PledgeWhereInput;
   Plugin: ResolverTypeWrapper<InterfacePluginModel>;
@@ -3790,6 +3796,7 @@ export type ResolversParentTypes = {
   OtpData: OtpData;
   PageInfo: PageInfo;
   PhoneNumber: Scalars['PhoneNumber']['output'];
+  Placeholder: Placeholder;
   PledgeWhereInput: PledgeWhereInput;
   Plugin: InterfacePluginModel;
   PluginField: InterfacePluginFieldModel;
@@ -4705,6 +4712,11 @@ export interface PhoneNumberScalarConfig extends GraphQLScalarTypeConfig<Resolve
   name: 'PhoneNumber';
 }
 
+export type PlaceholderResolvers<ContextType = any, ParentType extends ResolversParentTypes['Placeholder'] = ResolversParentTypes['Placeholder']> = {
+  message?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type PluginResolvers<ContextType = any, ParentType extends ResolversParentTypes['Plugin'] = ResolversParentTypes['Plugin']> = {
   _id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   pluginCreatedBy?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -5121,6 +5133,7 @@ export type Resolvers<ContextType = any> = {
   OtpData?: OtpDataResolvers<ContextType>;
   PageInfo?: PageInfoResolvers<ContextType>;
   PhoneNumber?: GraphQLScalarType;
+  Placeholder?: PlaceholderResolvers<ContextType>;
   Plugin?: PluginResolvers<ContextType>;
   PluginField?: PluginFieldResolvers<ContextType>;
   PositiveInt?: GraphQLScalarType;
